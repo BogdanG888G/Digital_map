@@ -23,7 +23,7 @@ superset-project/
 ### 1. Клонировать репозиторий
 
 ```bash
-git clone https://github.com/your-org/superset-project.git
+git clone https://github.com/BogdanG888G/Digital_map.git
 cd superset-project
 ```
 
@@ -64,7 +64,7 @@ docker exec -it superset superset import-dashboards --path /app/exports/
 ```
 
 
-## ⚙️ Полезные команды
+## ⚙️ Полезные команды (для отладки на всякий случай)
 
 ### Открыть терминал контейнера:
 
