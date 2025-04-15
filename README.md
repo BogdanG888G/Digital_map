@@ -29,6 +29,8 @@ cd superset-project
 
 ### 2. Запустить Superset
 
+Затем, находясь в папке, которую вы себе склонировали, прописать следующую команду, чтобы поднялся Superset
+
 ```bash
 docker compose up --build
 ```
