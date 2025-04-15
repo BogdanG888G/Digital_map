@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: superset_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: superset_db
+      POSTGRES_USER: superset_user
+      POSTGRES_PASSWORD: superset_password
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  superset:
+    image: apache/superset:latest
+    container_name: superset
+    restart: always
+    environment:
+      SUPERSET_ENV: development
+      SUPERSET_LOAD_EXAMPLES: "yes"
+      SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://superset_user:superset_password@postgres:5432/superset_db
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./superset_config.py:/app/pythonpath/superset_config.py
+    depends_on:
+      - postgres

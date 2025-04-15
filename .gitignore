@@ -1,0 +1,15 @@
+# Базы и volume
+pg_data/
+superset_data/
+
+# Питоновское
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Данные (если не нужны в git)
+data/
